@@ -1,0 +1,46 @@
+name: qucs-19-rg # you probably want to 'snapcraft register <name>'
+version: '0.0.19' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Frozen QUCS from Frans Schreuder # 79 char long summary
+description: |
+        This is a snap version of the Frans Schreuder's PPA of QUCS,
+        corresponding to version 0.0.19-rc3, for Ubuntu 16.04.
+        QUCS is a very nice circuit simulator.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  qucs:
+    command: wrapper $SNAP/usr/bin/qucs
+    # command: usr/bin/qucsactivefilter
+    # command: usr/bin/qucsator
+    # command: usr/bin/qucsattenuator
+    # command: usr/bin/qucsconv
+    # command: usr/bin/qucsdigi
+    # command: usr/bin/qucsdigilib
+    # command: usr/bin/qucsedit
+    # command: usr/bin/qucsfilter
+    # command: usr/bin/qucshelp
+    # command: usr/bin/qucslib
+    # command: usr/bin/qucsrescodes
+    # command: usr/bin/qucstrans
+    # command: usr/bin/qucsveri
+    plugs: [cups-control, home, locale-control]
+
+parts:
+  wrapper:
+    source: ./snap/
+    plugin: dump
+    organize:
+      wrapper: bin/wrapper
+
+  archives:
+    # See 'snapcraft plugins'
+    plugin: nil
+    stage-packages:
+      - adms
+      - asco
+      - qucs
+      - qucs-doc
+
+
