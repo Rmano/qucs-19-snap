@@ -1,6 +1,6 @@
 # qucs-19-snap
 
-This is a snap version of the [Frans Schreuder's PPA of QUCSi](
+This is a snap version of the [Frans Schreuder's PPA of QUCS](
 https://launchpad.net/~fransschreuder1/+archive/ubuntu/qucs),
 corresponding to version 0.0.19-rc3, for Ubuntu 16.04.
 

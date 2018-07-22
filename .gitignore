@@ -1,4 +1,5 @@
 *.swp
+.snapcraft
 *.snap
 parts
 prime
